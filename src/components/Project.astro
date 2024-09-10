@@ -1,0 +1,35 @@
+---
+interface Props {
+  title: string;
+  year: string;
+  technologies: string[];
+  details: string[];
+}
+const { title, year, details, technologies } = Astro.props;
+---
+
+<a
+  href=""
+  class="inline-block w-full rounded border bg-transparent p-4 pb-3 transition-all hover:border-gray-500 hover:shadow dark:border-gray-800 dark:hover:border-gray-500"
+>
+  <div class="flex justify-between">
+    <div>
+      <div class="mb-1 flex items-center gap-2">
+        <h3 class="font-semibold">{title}</h3>
+      </div>
+      <div class="flex flex-wrap items-center gap-2 lowercase">
+        {
+          technologies.map((technology) => (
+            <p class="rounded border p-1 text-xs text-gray-700 dark:border-gray-800 dark:text-gray-300">
+              {technology}
+            </p>
+          ))
+        }
+      </div>
+    </div>
+    <p class="text-xs">{year}</p>
+  </div>
+  <ul class="mt-2">
+    {details.map((detail) => <p class="text-sm">{detail}</p>)}
+  </ul>
+</a>
