@@ -14,6 +14,9 @@ importers:
       '@astrojs/tailwind':
         specifier: ^5.1.0
         version: 5.1.0(astro@4.15.3(rollup@4.21.2)(typescript@5.5.4))(tailwindcss@3.4.10)
+      '@fontsource/inter':
+        specifier: ^5.0.21
+        version: 5.0.21
       '@fontsource/outfit':
         specifier: ^5.0.15
         version: 5.0.15
@@ -333,6 +336,9 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource/inter@5.0.21':
+    resolution: {integrity: sha512-Y4Ph0bYD5IfW8r9PSeiNjLvM6D/Bh5+YT9jOKiBqW3YS+AEBlmy8v74TpTNeZAvL3zHmikHCnzaKw7ob8LZiKQ==}
 
   '@fontsource/outfit@5.0.15':
     resolution: {integrity: sha512-83EEWGV87amw2StNBrS8qsg2FNZ38j3hgUXODgfax1F1dyyQwVNzfwqiDhepk6S+RcAbX4U/tHP+AUO5YUVveQ==}
@@ -2426,6 +2432,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.21.5':
     optional: true
+
+  '@fontsource/inter@5.0.21': {}
 
   '@fontsource/outfit@5.0.15': {}
 
