@@ -1,12 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Header from '../components/header.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-	<Header />
+	<div class='min-h-screen flex flex-col pt-12 md:pt-20 p-8'>
+		<main class='max-w-[60ch] mx-auto w-full'>
+			<div>
+			<h1 class='font-bold text-2xl'>
+				Jericho Bantiquete
+			</h1>
+			<p>Software engineer</p>
+			</div>
+			<p class='pt-8 text-zinc-100 text-lg'>
+				Kumusta, My name is Jericho P. Bantiquete, a bachelorߴs degree holder with experience in web development and a passion for software development. I am currently based in the Philippines, where I enjoy building and improving things. I also freelance.
+			<a href="/about" class='text-indigo-500 text-base'>see more...</a>
+			</p>
+			<div class="flex items-center gap-4 mt-8">
+				<a target='_blank' href="https://github.com/monciego" class='underline hover:text-zinc-300'>github</a>
+				<a target="_blank" href="https://twitter.com/monciego" class='underline hover:text-zinc-300'>x (formerly twitter)</a>
+			</div>
+		</main>
+	</div>
 </Layout>
-
-<style>
-</style>
