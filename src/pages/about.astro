@@ -1,12 +1,12 @@
 ---
+import ParagraphContainer from "../components/ParagraphContainer.astro";
+import SectionHeader from "../components/SectionHeader.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Jericho Bantiquete">
-  <h1 class="text-xl font-bold">Get to know me</h1>
-  <p class="text-gray-700 dark:text-gray-200">Jericho Bantiquete</p>
-
-  <div class="space-y-4 pt-8 leading-snug text-gray-800 dark:text-gray-200">
+  <SectionHeader title="About" description="Get to know me" />
+  <ParagraphContainer>
     <p>
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque recusandae
       laborum perspiciatis iure consectetur hic impedit consequuntur suscipit
@@ -25,22 +25,5 @@ import Layout from "../layouts/Layout.astro";
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ea pariatur
       voluptatum sequi quis doloribus.
     </p>
-  </div>
-  <div class="mt-8 flex items-center gap-4">
-    <a
-      target="_blank"
-      href="https://github.com/monciego"
-      class="underline hover:text-zinc-300">github</a
-    >
-    <a
-      target="_blank"
-      href="https://twitter.com/monciego"
-      class="underline hover:text-zinc-300">x (formerly twitter)</a
-    >
-    <a
-      target="_blank"
-      href="https://www.linkedin.com/in/jericho-bantiquete/"
-      class="underline hover:text-zinc-300">linkedin</a
-    >
-  </div>
+  </ParagraphContainer>
 </Layout>
