@@ -1,4 +1,5 @@
 ---
+import Experience from "../components/Experience.astro";
 import ParagraphContainer from "../components/ParagraphContainer.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import Layout from "../layouts/Layout.astro";
@@ -12,22 +13,60 @@ import Layout from "../layouts/Layout.astro";
 
   <ParagraphContainer>
     <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque recusandae
-      laborum perspiciatis iure consectetur hic impedit consequuntur suscipit
-      laboriosam! Doloribus voluptas maiores odit illo id aspernatur eveniet
-      incidunt aut, omnis obcaecati accusantium quo eos qui perferendis
-      architecto adipisci odio consectetur. Repudiandae, illum ipsa obcaecati
-      magnam et maiores dolorem adipisci ipsum!
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit eaque a
-      perspiciatis reiciendis, dolore libero aperiam praesentium pariatur
-      nostrum molestiae natus iste dolores nemo, doloremque reprehenderit
-      aliquam quasi assumenda maiores?
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ea pariatur
-      voluptatum sequi quis doloribus.
+      An overview of my work <a href="#experience" class="hover:underline"
+        >experience</a
+      > and a selection of recent <a class="hover:underline" href="#projects"
+        >projects</a
+      >.
     </p>
   </ParagraphContainer>
+
+  <section class="my-6" id="experience">
+    <h3 class="mb-3 text-lg font-bold">Experience</h3>
+    <div class="space-y-3">
+      <Experience
+        company="Techniqal Group"
+        position="Co-owner & Software Engineer"
+        startDate="Mar 2022"
+        endDate="Present"
+        responsibilities={[
+          "Design and develop the product architecture and features.",
+        ]}
+      />
+      <Experience
+        company="Freelance Web Developer"
+        position="Developer"
+        startDate="Feb 2022"
+        endDate="Present"
+        responsibilities={[
+          "Giving assistance in system development for those in their bachelor's or master's degree.",
+          "Developed government websites, ensuring user-friendly interfaces and robust functionalities for seamless public interaction.",
+        ]}
+      />
+      <Experience
+        company="Massive Integrated Tech Solutions Inc."
+        position="Software Engineer"
+        startDate="Jan 2024"
+        endDate="Feb 2024"
+        responsibilities={[
+          "Developed web applications and software solutions, ensuring high performance, responsiveness, and user-friendly design. (NDA signed)",
+        ]}
+      />
+      <Experience
+        company="FFUF Manila Inc."
+        position="Frontend Developer Intern"
+        startDate="Mar 2022"
+        endDate="Jun 2022"
+        responsibilities={[
+          "Assist build front end web applications using Angular, RxJS and Akita.",
+          "Implement front-end features in line with best practices.",
+          "Experienced Scrum professionals drive sprint planning, daily standups, and backlog refinement for efficient and effective project execution.",
+        ]}
+      />
+    </div>
+  </section>
+
+  <section id="projects">
+    <h3 class="mb-3 text-lg font-bold">Projects</h3>
+  </section>
 </Layout>

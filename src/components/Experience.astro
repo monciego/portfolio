@@ -1,0 +1,29 @@
+---
+interface Props {
+  company: string;
+  startDate: string;
+  endDate: string;
+  position: string;
+  responsibilities: string[];
+}
+const { company, startDate, endDate, position, responsibilities } = Astro.props;
+---
+
+<div class="border-b pb-3">
+  <div class="flex justify-between">
+    <div>
+      <h3>{company}</h3>
+      <p class="text-sm text-gray-700 dark:text-gray-300">
+        {position}
+      </p>
+    </div>
+    <p class="text-sm">{startDate} - {endDate}</p>
+  </div>
+  <ul class="mt-2">
+    {
+      responsibilities.map((responsibility) => (
+        <li class="list-inside list-disc text-sm">{responsibility}</li>
+      ))
+    }
+  </ul>
+</div>
