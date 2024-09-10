@@ -1,5 +1,6 @@
 ---
 import '@fontsource/inter';
+import ThemeToggle from '../components/ThemeToggle.astro';
 interface Props {
 	title: string;
 }
@@ -17,7 +18,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class='anitalized font-sans tracking-tight bg-[#0d0e0e] text-white'>
+	<body class='anitalized font-sans tracking-tight bg-white dark:bg-[#0d0e0e] dark:text-white text-black'>
 		<div class='min-h-screen flex flex-col pt-12 p-8'>
 			<main class='max-w-[60ch] mx-auto w-full'>
 				<header class='pb-8 md:pb-12 flex items-center justify-between'>
@@ -27,9 +28,29 @@ const { title } = Astro.props;
 						<a href="/">work</a>
 						<a href="/">blog</a>
 					</nav>
+						<ThemeToggle/>
 				</header>
 				<slot />
 			</main>
 		</div>
 	</body>
 </html>
+
+<script is:inline>
+  const theme = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  })();
+
+  if (theme === "light") {
+    document.documentElement.classList.remove("dark");
+  } else {
+    document.documentElement.classList.add("dark");
+  }
+  window.localStorage.setItem("theme", theme);
+</script>
