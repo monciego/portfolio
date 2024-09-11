@@ -5,6 +5,7 @@ import Project from "../components/Project.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import Layout from "../layouts/Layout.astro";
 import { projects } from "../data/projects";
+const allProjects = await Astro.glob("./projects/*.md");
 ---
 
 <Layout title="Jericho Bantiquete">
@@ -71,88 +72,17 @@ import { projects } from "../data/projects";
   <section id="projects">
     <h3 class="text-lg font-bold">Projects</h3>
     <p class="mt-2 text-sm">
-      Selected projects I've worked on recently. <a href="" class="underline">
+      Selected projects I've worked on recently. <a
+        class="underline"
+        target="_blank"
+        href="https://github.com/monciego"
+      >
         Want to see more?
       </a>
     </p>
 
     <div class="space-y-3 pt-4">
-      {projects.map((project) => <Project {...project} />)}
-      <!--       <Project
-        title="Scholarship System"
-        technologies={[
-          "Laravel",
-          "vuejs",
-          "inertia",
-          "MySql",
-          "tailwindcss",
-          "machine learning",
-        ]}
-        year="2023"
-        details={[
-          "A system allows you to manage scholarships and provides students with personalized scholarship suggestions.",
-        ]}
-      />
-      <Project
-        title="2nd Portfolio Site"
-        technologies={[
-          "NextJs",
-          "Styled Components",
-          "TypeScript",
-          "Figma",
-          "Vercel",
-        ]}
-        year="2023"
-        details={[
-          "My second portfolio built with NextJs, TypeScript and Styled Components",
-        ]}
-      />
-      <Project
-        title="Infirmary System"
-        technologies={["Laravel", "MySql", "AlpineJs", "TailwindCSS"]}
-        year="2022"
-        details={[
-          "A web-based system for efficiently handling patient records, treatments, medications, and examinations at Pangasinan State University Infirmary.",
-        ]}
-      />
-      <Project
-        title="Tourist Web App"
-        technologies={["Laravel", "MySql", "AlpineJs", "TailwindCSS"]}
-        year="2022"
-        details={[
-          "A Tourism Reservation System for Dasol Municipality to enhance tourism management and visitor experience",
-        ]}
-      />
-      <Project
-        title="Scholarship System (capstone project)"
-        technologies={[
-          "Laravel",
-          "MySql",
-          "AlpineJs",
-          "TailwindCSS",
-          "Adobe XD",
-        ]}
-        year="2022"
-        details={[
-          "This project digitizes the scholarship application process, making it more convenient for students to apply for aid and helping providers efficiently manage and review applications.",
-        ]}
-      />
-      <Project
-        title="Lediable"
-        technologies={["Html", "css", "javascript"]}
-        year="2021"
-        details={[
-          "A responsive restaurant website with multiple pages and elegant user interface with cool animations.",
-        ]}
-      />
-      <Project
-        title="Umatter"
-        technologies={["Html", "css", "javascript"]}
-        year="2021"
-        details={[
-          "A meditation and relaxation app that designed to take you some moment to relax and breathe.",
-        ]}
-      /> -->
+      {allProjects.map((project) => <Project {project} />)}
     </div>
   </section>
 </Layout>
