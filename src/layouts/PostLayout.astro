@@ -1,0 +1,13 @@
+---
+import Prose from "../components/Prose.astro";
+import Layout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+  <Prose>
+    <h1>{frontmatter.title}</h1>
+    <slot />
+  </Prose>
+</Layout>
